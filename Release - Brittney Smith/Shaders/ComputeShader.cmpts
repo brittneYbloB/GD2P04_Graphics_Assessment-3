@@ -1,0 +1,30 @@
+#version 460 core
+
+#define WORK_GROUP_SIZE_X 128
+
+layout(local_size_x = WORK_GROUP_SIZE_X,
+    local_size_y = 1,
+    local_size_z = 1
+)in;
+
+layout(std430, binding = 0) buffer PositionLifeBuffer { vec4 PositionLife[]; };
+layout(std430, binding = 1) buffer VelocityBuffer { vec4 Velocity[]; };
+layout(std430, binding = 2) buffer InitialPropertiesBuffer { vec4 InitialProperties[]; };
+
+uniform vec3 EmitterOrigin;
+uniform vec4 VelocityLifeChange;
+
+void main()
+{
+    uint i = gl_GlobalInvocationID.x;
+    Velocity[i].xyz += VelocityLifeChange.xyz;
+    PositionLife[i].xyz += Velocity[i].xyz * VelocityLifeChange.w;
+    PositionLife[i].w -= VelocityLifeChange.w;
+
+    if (PositionLife[i].w <= 0.0f)
+    {
+        //reset particles
+        PositionLife[i].xyzw = vec4(EmitterOrigin.xyz, InitialProperties[i].w);
+        Velocity[i] = InitialProperties[i];
+    }
+}
