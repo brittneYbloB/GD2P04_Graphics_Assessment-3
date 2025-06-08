@@ -84,13 +84,15 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(ProjectDir)/Dependencies/GLFW;$(ProjectDir)/Dependencies/GLEW;$(ProjectDir)/Dependencies/STB;$(ProjectDir)/Dependencies/TINY;$(ProjectDir)/Dependencies/GLM;$(ProjectDir)/Dependencies/FREETYPE;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ProjectDir)/Dependencies/GLEW;$(ProjectDir)/Dependencies/GLFW;$(ProjectDir)/Dependencies/STB;$(ProjectDir)/Dependencies/TINY;$(ProjectDir)/Dependencies/GLM;$(ProjectDir)/Dependencies/FREETYPE;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)\Dependencies\GLEW;$(ProjectDir)\Dependencies\GLFW;$(ProjectDir)\Dependencies\STB;$(ProjectDir)\Dependencies\GLM;$(ProjectDir)\Dependencies\FREETYPE;$(ProjectDir)\Dependencies\TINY;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)\Dependencies\GLEW;$(ProjectDir)\Dependencies\GLFW;$(ProjectDir)\Dependencies\FREETYPE;$(ProjectDir)\Dependencies\TINY;$(LibraryPath)</LibraryPath>
+    <ReferencePath>$(VC_ReferencesPath_x64);</ReferencePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(ProjectDir)/Dependencies/GLFW;$(ProjectDir)/Dependencies/GLEW;$(ProjectDir)/Dependencies/STB;$(ProjectDir)/Dependencies/TINY;$(ProjectDir)/Dependencies/GLM;$(ProjectDir)/Dependencies/FREETYPE;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ProjectDir)/Dependencies/GLEW;$(ProjectDir)/Dependencies/GLFW;$(ProjectDir)/Dependencies/STB;$(ProjectDir)/Dependencies/TINY;$(ProjectDir)/Dependencies/GLM;$(ProjectDir)/Dependencies/FREETYPE;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)\Dependencies\GLEW;$(ProjectDir)\Dependencies\GLFW;$(ProjectDir)\Dependencies\STB;$(ProjectDir)\Dependencies\GLM;$(ProjectDir)\Dependencies\FREETYPE;$(ProjectDir)\Dependencies\TINY;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)\Dependencies\GLEW;$(ProjectDir)\Dependencies\GLFW;$(ProjectDir)\Dependencies\FREETYPE;$(ProjectDir)\Dependencies\TINY;$(LibraryPath)</LibraryPath>
+    <ReferencePath>$(VC_ReferencesPath_x64);</ReferencePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
